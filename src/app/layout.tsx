@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
-        <div className="fixed inset-0 -z-10 bg-[#131419]">
+        <div className="fixed inset-0 -z-10 bg-black">
           <DotGrid
             dotSize={3}
             gap={60}
