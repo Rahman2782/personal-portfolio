@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Header from "@/components/Header";
 import "./globals.css";
+import DotGrid from "@/components/DotGrid";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +28,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
-        {children}
+        <div className="fixed inset-0 -z-10 bg-[#131419]">
+          <DotGrid
+            dotSize={3}
+            gap={60}
+            baseColor="#1B3B17"
+            activeColor="#01FE2B"
+            proximity={120}
+            shockRadius={200}
+            shockStrength={3}
+            resistance={750}
+            returnDuration={1.5}
+          />
+        </div>
+        
+        <div className="relative z-10">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
