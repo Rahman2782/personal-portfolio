@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -119,13 +123,13 @@
   }
 }
 
-/* Your custom overrides */
+/* Custom override */
 body {
   background: transparent !important;
   color: white !important;
 }
 
-/* Ensure your header and footer stay visible */
+/* Ensure header and footer stay visible */
 .relative.z-10 {
   background: transparent;
 }
